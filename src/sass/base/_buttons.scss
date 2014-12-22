@@ -1,0 +1,11 @@
+button {
+    @extend %button;
+    @include appearance(none);
+    border: none;
+    cursor: pointer;
+    user-select: none;
+    vertical-align: middle;
+    white-space: nowrap;
+    //margin: 1em;
+    margin-bottom: 0.5em;
+}

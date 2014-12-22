@@ -1,0 +1,33 @@
+.down-arrow {
+    @include animation-duration(0.3s);
+    border-radius: 50%;
+    border: 2px solid #ffffff;
+    bottom: 30px;
+    height: 50px;
+    left: 0;
+    margin: 0 auto;
+    padding-top: 10px;
+    position: absolute;
+    right: 0;
+    text-align: center;
+    width: 50px;
+}
+
+.down-arrow {
+    background: #ffffff;
+    color: #222;
+}
+
+.down-arrow a {
+    color: #222;
+}
+
+.down-arrow:hover {
+    @include animation-duration(0.3s);
+    background: none;
+    border: 2px solid #ffffff;
+}
+
+.down-arrow:hover a {
+    color: #ffffff !important;
+}

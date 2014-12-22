@@ -1,0 +1,71 @@
+section[role=slider] {
+    background-color: $white;
+    color: #000;
+    height: 100vh;
+    text-align: center;
+    text-transform: uppercase;
+    header {
+        @include clearfix;
+        @include outer-container;
+        hgroup {
+            padding-top: 16vh;
+            h1 {
+                text-shadow: -5px 5px 0px #fff;
+            }
+        }
+    }
+    figure {
+        height: auto;
+        margin: auto;
+        padding: 2em 0 2em 0;
+        width: 50px;
+    }
+}
+
+/* background setup */
+.background {
+    background-position: 50% 50% \9  !important;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+}
+
+/* fullscreen setup */
+html, body {
+    /* give this to all tags from html to .fullscreen */
+    height: 100%;
+}
+
+.fullscreen,
+.content-a {
+    color: $white;
+    min-height: 100%;
+    width: 100%;
+}
+
+.not-fullscreen,
+.not-fullscreen .content-a,
+.fullscreen.not-overflow,
+.fullscreen.not-overflow .content-a {
+    height: 100%;
+    overflow: hidden;
+}
+
+/* content centering styles */
+.content-a {
+    display: table;
+}
+
+.content-b {
+    display: table-cell;
+    position: relative;
+    text-align: center;
+    padding-bottom: 20%;
+    vertical-align: middle;
+    @include media($bp-large) {
+        padding: 0 25% 15% 25%;
+    }
+
+    h1 {
+        text-shadow: 0 0 8px rgba(0, 0, 0, 0.5);
+    }
+}

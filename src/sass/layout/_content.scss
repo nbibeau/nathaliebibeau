@@ -1,0 +1,43 @@
+section[role=main] {
+    padding: 90px 0 0 0;
+}
+
+article {
+    @include outer-container;
+    @include pad(0 2em 2em 2em);
+    aside {
+        ul {
+            margin: 0px;
+            padding: 0px;
+            list-style: none;
+            li {
+                margin: 0 0 .5em 0em;
+            }
+        }
+        @include pad(2em 0 0 0);
+        @include media($bp-large) {
+            @include pad(6.5em 0 0 0);
+            @include span-columns(4);
+            @include shift(1);
+        }
+    }
+    .description {
+        @include media($bp-large) {
+            @include span-columns(7);
+        }
+    }
+    .thumb {
+        @include media($bp-large) {
+            @include pad(3em 0 0 0);
+            @include span-columns(4);
+        }
+    }
+}
+
+.inner {
+    padding: 2em;
+    @include media($bp-large) {
+        @include span-columns(7);
+        @include shift(2.5);
+    }
+}

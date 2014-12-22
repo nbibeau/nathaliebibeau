@@ -1,0 +1,20 @@
+{
+  "name": "Default",
+  "version": "0.0.1",
+  "dependencies": {
+    	"jquery": "latest",
+    	"normalize-scss": "latest",
+		"bourbon": "latest",
+		"neat": "latest",
+		"modernizer": "latest",
+		"mixitup2": "latest",
+		"viewport-units-buggyfill": "latest",
+		"jquery-viewport-checker": "latest",
+		"video.js": "latest",
+		"fitvids": "latest",
+		"fontawesome": "latest",
+		"bigSlide": "latest",
+		"monosocialiconsfont": "latest",
+		"SelectOrDie": "latest"
+  	}
+}

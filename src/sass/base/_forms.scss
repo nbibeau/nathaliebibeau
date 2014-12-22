@@ -1,0 +1,104 @@
+fieldset {
+    border: 0;
+    padding: 0;
+    ol {
+        li {
+            display: block;
+            margin-bottom: 1em;
+            margin: 0 0 0 -40px;
+        }
+    }
+}
+
+input,
+label,
+select {
+    display: block;
+    font-family: $form-font-family;
+    font-size: $form-font-size;
+}
+
+label {
+    font-weight: bold;
+    margin-bottom: $base-line-height / 4;
+    &.required:after {
+        content: "*";
+    }
+    abbr {
+        display: none;
+    }
+}
+
+textarea,
+#{$all-text-inputs},
+select[multiple=multiple] {
+    @include box-sizing(border-box);
+    @include transition(border-color);
+    background-color: white;
+    border-radius: $form-border-radius;
+    border: 1px solid $form-border-color;
+    box-shadow: $form-box-shadow;
+    font-family: $sans-serif;
+    font-size: 1.4em;
+    margin-bottom: $base-line-height / 2;
+    margin-right: 10px;
+    padding: $base-line-height / 2.3 $base-line-height / 2.3;
+    width: 100%;
+    &:hover {
+        border-color: $form-border-color-hover;
+    }
+    &:focus {
+        border-color: $form-border-color-focus;
+        box-shadow: $form-box-shadow-focus;
+        color: rgb(54, 116, 187);
+        outline: none;
+    }
+}
+
+footer input[type="submit"] {
+    -webkit-font-smoothing: antialiased;
+    @include appearance(none);
+    background-color: $blue;
+    border-radius: $base-border-radius;
+    border: none;
+    color: $white;
+    cursor: pointer;
+    display: inline-block;
+    font-family: $sans-serif;
+    font-size: $base-font-size;
+    font-size: 1.4em;
+    padding: .4em 2em;
+    text-decoration: none;
+    user-select: none;
+    vertical-align: middle;
+    white-space: nowrap;
+    &:hover {
+        background-color: $hover-button-color;
+        color: white;
+    }
+}
+
+textarea {
+    resize: vertical;
+}
+
+input[type="search"] {
+    @include appearance(none);
+}
+
+input[type="checkbox"], input[type="radio"] {
+    display: inline;
+    margin-right: $base-line-height / 4;
+}
+
+input[type="file"] {
+    margin-bottom: $base-line-height / 2;
+    padding-bottom: $base-line-height / 3;
+    width: 100%;
+}
+
+select {
+    margin-bottom: $base-line-height;
+    max-width: 100%;
+    width: auto;
+}

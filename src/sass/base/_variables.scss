@@ -1,0 +1,91 @@
+// Typography
+/* 
+http://drinchev.github.io/monosocialiconsfont/
+*/
+
+@font-face {
+    font-family: 'Mono Social Icons Font';
+    font-style: normal;
+    font-weight: normal;
+    src: url("fonts/MonoSocialIconsFont-1.10.eot");
+    src: url("fonts/MonoSocialIconsFont-1.10.eot?#iefix") format("embedded-opentype"), url("fonts/MonoSocialIconsFont-1.10.woff") format("woff"), url("fonts/MonoSocialIconsFont-1.10.ttf") format("truetype"), url("fonts/MonoSocialIconsFont-1.10.svg#MonoSocialIconsFont") format("svg");
+    src: url("fonts/MonoSocialIconsFont-1.10.ttf") format("truetype");
+}
+
+
+$icon-font: "Mono Social Icons Font";
+$sans-serif: "adelle-sans", sans-serif;
+$serif: "adelle", serif;
+$base-font-family: $serif;
+$header-font-family: $sans-serif;
+
+// Sizes
+$base-font-size: 1em;
+$base-line-height: $base-font-size * 1.5;
+$unitless-line-height: $base-line-height / ($base-line-height * 0 + 1);
+
+// Strip units from line-height: https://developer.mozilla.org/en-US/docs/Web/CSS/line-height#Prefer_unitless_numbers_for_line-height_values
+$header-line-height: $base-font-size * 1.25;
+$base-border-radius: em(3);
+
+// Colors
+$blue: #5078C3;
+$dark-gray: #333333;
+$medium-gray: #999999;
+$light-gray: #f2f2f2;
+$light-red: #fbe3e4;
+$light-yellow: #fff6bf;
+$light-green: #e6efc2;
+$white: white;
+$purple: #484e66;
+$pink: #eb3778;
+$bg-footer: #8fcf5c;
+$green: #8fcf5c;
+$dark-green: #4aaf4f;
+$orange: #f5a338;
+$yellow: #ffdd22;
+
+//need to fix
+$black: rgba(0, 0, 0, 1);
+$white: rgba(255, 255, 255, 1);
+$light-gray: rgba(204, 204, 204, 1);
+$body_font: rgba(61, 61, 61, 1);
+$body_bg: rgba(246, 245, 242, 1);
+$header_link: rgba(0, 0, 0, 1);
+$header_link_hover: rgba(102, 102, 102, 1);
+
+footer {
+    background: #222222;
+}
+
+// Background Color
+$base-background-color: white;
+
+// Font Colors
+$base-font-color: $dark-gray;
+$base-accent-color: $blue;
+
+// Link Colors
+$base-link-color: $base-accent-color;
+$hover-link-color: darken($base-accent-color, 15);
+$base-button-color: $base-link-color;
+$hover-button-color: $hover-link-color;
+
+// Border color
+$base-border-color: $light-gray;
+
+// Flash Colors
+$alert-color: $light-yellow;
+$error-color: $light-red;
+$notice-color: $light-yellow;
+$success-color: $light-green;
+
+// Forms
+$form-border-color: $base-border-color;
+$form-border-color-hover: darken($base-border-color, 10);
+$form-border-color-focus: $base-accent-color;
+$form-border-radius: $base-border-radius;
+$form-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.06);
+$form-box-shadow-focus: $form-box-shadow, 0 0 5px rgba(darken($form-border-color-focus, 5), 0.7);
+$form-font-size: 2em;
+$form-font-family: $base-font-family;
