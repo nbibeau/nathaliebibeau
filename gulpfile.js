@@ -1,10 +1,3 @@
-
-/* TO-DO:
-1. add sass-linting
-2. Fonts
-
-*/
-
 // Pull in gulp plugins and assign to variables
 var gulp 		= require('gulp'),
 	uglify 		= require('gulp-uglifyjs'),
@@ -12,28 +5,18 @@ var gulp 		= require('gulp'),
 	sass 		= require('gulp-ruby-sass'),
 	imagemin 	= require('gulp-imagemin'),
 	pngquant 	= require('imagemin-pngquant'),
-	cache 		= require('gulp-cached'),
 	livereload 	= require('gulp-livereload'),
 	notify 		= require('gulp-notify'),
-	jshint 		= require('gulp-jshint'),
-	bower 		= require('gulp-bower');
+	jshint 		= require('gulp-jshint');;
 
 // Create custom variables to make life easier
 var outputDir = 'dist';
 
 var scriptList = [
+	'src/components/modernizer/modernizr.js',
 	'src/components/jquery/dist/jquery.js', 
 	'src/components/jquery-viewport-checker/src/jquery.viewportchecker.js',
-	'src/components/SelectOrDie/_src/selectordie.min.js',
-	'src/js/custom/menu.js',
-	'src/js/custom/menu-function.js',
-	'src/js/custom/products.js',
-	'src/js/custom/tabs.js',
-];
-
-var fontIcons = [
-	'src/components/fontawesome/fonts/**.*', 
-	'src/components/monosocialiconsfont/MonoSocialIconsFont*.*'
+	'src/components/viewport-units-buggyfill/viewport-units-buggyfill.js',
 ];
 
 var sassOptions = {
@@ -65,26 +48,13 @@ gulp.task('js', function() {
     	.pipe(notify("js task finished"));
 });
 
-
 // Create sass compile task
 gulp.task('sass', function() {
-	return gulp.src('src/sass/style.scss')
-		.pipe(plumber({errorHandler: notify.onError("Error: <%= error.message %>")}))
-		.pipe(sass(sassOptions))
-		.pipe(gulp.dest(outputDir + '/css'))
-		.pipe(livereload())
-		.pipe(notify("sass task finished"));
-}); 
-
-// Create fonticons compile task
-gulp.task('icons', function() { 
-    return gulp.src(fontIcons) 
-        .pipe(gulp.dest(outputDir + '/fonts')); 
-});
-
-// Create bower update and install task
-gulp.task('bower', function() {
-  	return bower();
+    return sass('src/sass/style.scss', sassOptions) 
+    .on('error', function (err) { console.error('Error!', err.message); })
+    .pipe(gulp.dest(''))
+    .pipe(livereload())
+    .pipe(notify("sass task finished"));
 });
 
 // Create watch task
@@ -97,4 +67,4 @@ gulp.task('watch', function() {
 });
 
 // Create default task so you can gulp whenever you don't want to watch
-gulp.task('default', ['js', 'sass', 'imagemin', 'icons', 'bower', 'watch']);
+gulp.task('default', ['js', 'sass', 'imagemin']);
