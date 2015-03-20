@@ -15,8 +15,9 @@ var outputDir = 'dist';
 var scriptList = [
 	'src/components/modernizer/modernizr.js',
 	'src/components/jquery/dist/jquery.js', 
-	'src/components/jquery-viewport-checker/src/jquery.viewportchecker.js',
+	//'src/components/jquery-viewport-checker/src/jquery.viewportchecker.js',
 	'src/components/viewport-units-buggyfill/viewport-units-buggyfill.js',
+    'src/js/vendor/jquery.scrollorama.js'
 ];
 
 var sassOptions = {

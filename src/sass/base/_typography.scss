@@ -1,208 +1,32 @@
 body {
     -webkit-font-smoothing: antialiased;
-    background-color: $base-background-color;
     color: $base-font-color;
     font-family: $base-font-family;
     font-size: $base-font-size;
     line-height: $unitless-line-height;
 }
 
-//Modular scale based on: http://modularscale.com/scale/?px1=20&px2=734&ra1=1.618&ra2=0
-
 h1, h2, h3, h4, h5, h6 {
     font-family: $header-font-family;
     text-rendering: optimizeLegibility;
-}
-
-h1 {
-    font-size: $base-font-size;
-    text-transform: uppercase;
-    @include media($bp-large) {
-        font-size: $base-font-size * 4.125;
-        // 16 * 4.125 = 66px
-        line-height: 1.0909em;
-        margin-bottom: 0.3636em;
-    }
-
-    .single & {
-        text-align: center;
-    }
-}
-
-h2 {
-    font-size: $base-font-size;
-    @include media($bp-large) {
-        font-size: $base-font-size * 3.25;
-        // 16 * 3.25 = 52px
-        line-height: 1.3846em;
-        margin-bottom: 0.4615em;
-    }
-}
-
-h3 {
-    font-size: $base-font-size;
-    @include media($bp-large) {
-        font-size: $base-font-size * 2.5625;
-        // 16 * 2.5625 = 41px
-        line-height: 1.1707em;
-        margin-bottom: 0.5854em;
-    }
-}
-
-h4 {
-    font-size: $base-font-size;
-    @include media($bp-large) {
-        font-size: $base-font-size * 2;
-        font-weight: 400;
-        letter-spacing: -1px;
-        // 16 * 2 = 32px
-        line-height: 1.2em;
-        margin-bottom: 0.75em;
-    }
-
-    a {
-        color: rgba(0, 0, 0, 1);
-    }
-}
-
-h5 {
-    font-size: $base-font-size;
-    @include media($bp-large) {
-        font-size: $base-font-size * 1.5625;
-        // 16 * 1.5625 = 25px
-        line-height: 1.92em;
-        margin-bottom: 0.96em;
-    }
-}
-
-h6 {
-    font-size: $base-font-size;
-    @include media($bp-large) {
-        font-size: $base-font-size * 1.25;
-        // 16 * 1.25 = 20px
-        line-height: 1.2em;
-        margin-bottom: 1.2em;
-    }
-}
-
-p, ul, ol {
-    font-size: $base-font-size;
-    list-style-type: disc;
-    @include media($bp-large) {
-        font-size: $base-font-size * 1.25;
-        // 16 * 1.25 = 20px
-        line-height: 1.5em;
-        margin-bottom: 1.5em;
-    }
-
-    footer & {
-        font-family: $sans-serif;
-        font-size: $base-font-size;
-        line-height: $base-line-height;
-        margin-bottom: $base-line-height;
-    }
-    .archive & {
-        //color: rgba(0, 0, 0, 0.6);
-   
-    }
-}
-
-li {
-    margin: 0 0 .5em 2.5em;
-}
-
-a {
-    @include transition(color 0.1s linear);
-    color: $base-link-color;
-    text-decoration: none;
-    &:hover {
-        color: $hover-link-color;
-    }
-    &:active, &:focus {
-        color: $hover-link-color;
-        outline: none;
-    }
-}
-
-footer a {
-    @include transition(color 0.1s linear);
-    border-bottom: 1px dotted #ccc;
-    color: $white;
-    &:hover {
-        color: #ccc;
-    }
-    &:active, &:focus {
-        color: $hover-link-color;
-        outline: none;
-    }
-}
-
-hr {
-    border-bottom: 1px solid $base-border-color;
-    border-left: none;
-    border-right: none;
-    border-top: none;
-    margin: $base-line-height 0;
-}
-
-img {
-    margin: 0;
-    max-width: 100%;
-}
-
-blockquote {
-    border-left: 2px solid $base-border-color;
-    color: lighten($base-font-color, 15);
-    margin: $base-line-height 0;
-    padding-left: $base-line-height / 2;
-}
-
-cite {
-    color: lighten($base-font-color, 25);
-    font-style: italic;
-    &:before {
-        content: '\2014 \00A0';
-    }
-}
-
-.error {
-    @include flash($error-color);
-    display: none;
-    @include media($bp-large) {
-        @include shift(2);
-        @include span-columns(8);
-    }
-}
-
-.success {
-    display: none;
     text-align: center;
+}
+
+h1 { 
+    font-size: modular-scale(3); 
+    @include media($bp-large) {
+        font-size: modular-scale(6);
+    }
+}
+
+h2 { 
+    font-size: modular-scale(2);
+    color: $black;
+    @include media($bp-large) {
+        font-size: modular-scale(5); 
+    } 
 }
 
 small {
-    font-family: $sans-serif;
-    font-size: .9em;
-}
-
-nav {
-    font-family: $sans-serif;
-}
-
-.headline, .subhead {
-    color: $white;
-    text-align: center;
-    text-shadow: 0 0 8px rgba(0, 0, 0, 0.5);
-}
-
-.headline {
-    font-size: $base-font-size * 7;
-    width: 90%;
-}
-
-.subhead {
-    font-size: $base-font-size * 2.5;
-}
-
-.wf-loading {
-    visibility: hidden;
+    font-size: modular-scale(-1); 
 }
